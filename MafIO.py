@@ -13,7 +13,7 @@
 class Sequence:
 
     def __init__(self, line):
-        data = [x for x in line.split(' ') if x != '']
+        data = line.split()
         self.species, self.chr = data[1].split('.')
         self.start = int(data[2])
         self.size = int(data[3])
