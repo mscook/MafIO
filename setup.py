@@ -37,7 +37,6 @@ setup(
     author_email = MafIO.__author_email__,
     url = MafIO.__url__,
     packages=packages,
-    scripts = [''],
     package_data={'': ['LICENSE']},
     package_dir={'MafIO': 'MafIO'},
     include_package_data=True,
