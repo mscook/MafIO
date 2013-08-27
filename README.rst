@@ -13,7 +13,7 @@ https://genome.ucsc.edu/FAQ/FAQformat.html#format5
 Issues
 ------
 
-** Assumes only a single alignment. See more below. **
+**Assumes only a single alignment. See more below.**
 
 
 Usage
@@ -28,29 +28,19 @@ Given a MAF file such like::
     i droSim1.chrX N 0 C 0
 
 
-Tis module provides parse function to generate an iterator that return a
+This module provides parse function to generate an iterator that return a
 group of alignemnt sequence objects every time you call it (next).
 
-```
->>> import MafIO
->>> maf = MafIO.parse('dro.maf')
->>> alignment = next(maf)  # Get the next list of multiple alignments
->>> len(alignment)
-2  # There are two sequences in this list
->>> aln = alignment[0]  # Get the first sequence
->>> aln.species
-'dm3'  # Species name
->>> aln.chr
-'chrXHet' # Chromosome name
->>> aln.start
-224  # The start of the aligning region
->>> aln.size
-308  # The size of the aligning region (without gap)
->>> aln.strand
-'+'  # Sequence strand
->>> aln.chrsize
-204112  # Chromosome length
->>> aln.seq
-'tagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatag
-atagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagatagataga'  # Alignment sequence
-```
+
+Example usage
+-------------
+
+.. code:: python
+
+     import MafIO
+    
+    maf = MafIO.parse('example.maf')
+    alignment = next(maf)  # Get the next list of multiple alignments
+    for e in alignment:
+        print e.seq
+
