@@ -9,6 +9,9 @@ complicates installation/distribution of Banzai.
 More info on MAF files can be found at 
 https://genome.ucsc.edu/FAQ/FAQformat.html#format5
 
+The original *basic/buggy* implementation this is based on is at:
+https://github.com/jlhg/MafIO
+
 
 Issues
 ------
@@ -37,7 +40,7 @@ Example usage
 
 .. code:: python
 
-     import MafIO
+    import MafIO
     
     maf = MafIO.parse('example.maf')
     alignment = next(maf)  # Get the next list of multiple alignments
