@@ -28,6 +28,7 @@ class Sequence:
     def __init__(self, line):
         data = line.strip().split()
         if len(data) != 7:
+            print data
             raise Exception('Does not conform to MAF spec')
         try:
             self.species, self.chr = data[1].split('.')
@@ -36,8 +37,11 @@ class Sequence:
             if len(tmp) == 1:
                 self.species = tmp
                 self.strain = self.species
+                self.chr = None
             else:
-                raise Exception('Does not conform to MAF spec')
+                self.species = tmp[0]
+                self.strain = self.species
+                self.chr = None
         self.start = int(data[2])
         self.size = int(data[3])
         self.strand = data[4]
