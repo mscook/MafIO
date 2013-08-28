@@ -1,5 +1,5 @@
-holding/*
-build/*  
-dist/* 
-MafIO.egg-info/*
+holding/
+build/
+dist/ 
+MafIO.egg-info/
 *.pyc
